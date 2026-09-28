@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/*
+ * Tailwind CSS v4 is configured in CSS: the theme block below is the whole
+ * config (there is no tailwind.config.ts, by design in v4).
+ */
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-veil: rgb(255 255 255 / 0.6);
+  --color-veil-strong: rgb(255 255 255 / 0.85);
+}
+
+/** Frosted panel used by every overlay element. */
+@utility glass {
+  background-color: rgb(255 255 255 / 0.13);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / 0.18);
+  box-shadow: 0 8px 30px rgb(8 12 30 / 0.18);
+}
+
+@utility glass-strong {
+  background-color: rgb(255 255 255 / 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgb(255 255 255 / 0.26);
+  box-shadow: 0 10px 36px rgb(8 12 30 / 0.22);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  /* A painted sky, so the very first frame is never a white rectangle. */
+  background: linear-gradient(180deg, #141c38 0%, #3d5a86 42%, #9fc0dd 74%, #dfe7ef 100%);
+  color: rgb(255 255 255 / 0.85);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* The entire viewport is the game: no scrollbars, no chrome. */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+canvas {
+  display: block;
+  touch-action: none;
+}
+
+#game-root {
+  position: fixed;
+  inset: 0;
+}
+
+.sky-fallback {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #16203f 0%, #46628c 40%, #a9c6e0 70%, #e6ecf2 100%);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toast-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+}
+
+.animate-toast-in {
+  animation: toast-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-toast-out {
+  animation: toast-out 700ms ease-in both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-toast-in,
+  .animate-toast-out,
+  .animate-rise {
+    animation-duration: 1ms;
+  }
+}

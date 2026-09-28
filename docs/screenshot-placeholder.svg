@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="Cloud Sculptor screenshot placeholder">
+  <title>Cloud Sculptor — screenshot placeholder</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b2748" />
+      <stop offset="30%" stop-color="#3f5c8c" />
+      <stop offset="62%" stop-color="#8fb4d6" />
+      <stop offset="100%" stop-color="#dbe5ee" />
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e2" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#ffe6bb" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ffdca8" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" />
+    </filter>
+    <filter id="softer" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="26" />
+    </filter>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6f9a55" />
+      <stop offset="100%" stop-color="#3e5f3a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#sky)" />
+  <circle cx="905" cy="205" r="180" fill="url(#sun)" />
+  <circle cx="905" cy="205" r="26" fill="#fff8ea" opacity="0.9" />
+
+  <!-- clouds -->
+  <g fill="#fdfdff" opacity="0.92" filter="url(#soft)">
+    <ellipse cx="300" cy="230" rx="96" ry="52" />
+    <ellipse cx="372" cy="255" rx="70" ry="40" />
+    <ellipse cx="244" cy="262" rx="62" ry="34" />
+  </g>
+  <g fill="#eef3fb" opacity="0.75" filter="url(#softer)">
+    <ellipse cx="690" cy="150" rx="120" ry="46" />
+    <ellipse cx="790" cy="168" rx="80" ry="32" />
+  </g>
+  <g fill="#f7f2f6" opacity="0.7" filter="url(#soft)">
+    <ellipse cx="1010" cy="330" rx="88" ry="38" />
+    <ellipse cx="1080" cy="348" rx="58" ry="26" />
+  </g>
+
+  <!-- hills, lake, village -->
+  <path d="M0 520 C 140 470, 260 505, 380 520 C 520 538, 640 500, 760 512 C 900 526, 1040 496, 1200 520 L1200 700 L0 700 Z" fill="url(#hill)" opacity="0.95" />
+  <path d="M0 560 C 180 528, 320 566, 470 578 C 640 592, 800 560, 980 572 C 1090 580, 1150 566, 1200 570 L1200 700 L0 700 Z" fill="#4b7a4a" opacity="0.9" />
+  <ellipse cx="330" cy="632" rx="132" ry="34" fill="#7fa6c4" opacity="0.75" />
+  <g fill="#f0e7d6">
+    <rect x="712" y="588" width="26" height="20" />
+    <rect x="756" y="596" width="22" height="17" />
+    <rect x="806" y="584" width="28" height="22" />
+  </g>
+  <g fill="#b9756a">
+    <path d="M704 589 L746 589 L725 572 Z" />
+    <path d="M749 597 L785 597 L767 583 Z" />
+    <path d="M798 585 L842 585 L820 566 Z" />
+  </g>
+
+  <!-- label -->
+  <rect x="40" y="40" width="430" height="54" rx="16" fill="#ffffff" opacity="0.14" />
+  <text x="62" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#ffffff" opacity="0.82" letter-spacing="6">CLOUD SCULPTOR</text>
+  <text x="62" y="120" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">
+    Screenshot placeholder — replace with a real capture of the running game.
+  </text>
+</svg>
